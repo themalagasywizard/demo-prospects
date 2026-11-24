@@ -18,13 +18,12 @@ acm-vitrerie-demo/
 │  ├─ fonts/                   (dossier vide : polices en base64 dans styles.css)
 │  ├─ js/main.js               animations, filtres, accordéon, formulaire
 │  └─ img/favicon.svg          logo (SVG)
-├─ preview-email-hero.png      ← pièce jointe e-mail · 1200 × 927 px · 170 Ko
-├─ preview-email-mobile.png    ← pièce jointe e-mail · 390 × 1 447 px · 94 Ko
-├─ preview-email-full.png      ← pièce jointe e-mail · 1200 × 10 666 px · 772 Ko
-├─ preview-desktop-fullres.png rendu plein format 1440 px (archive, 2,6 Mo)
-├─ preview-mobile-fullres.png  rendu plein format 390 px (archive, 1,9 Mo)
-├─ preview-hero-fullres.png    rendu plein format 1440 px (archive, 732 Ko)
-├─ .qa/                        captures de contrôle qualité (non jointes)
+├─ preview-email-hero.png      ← pièce jointe e-mail · 1200 × 927 px · 328 Ko
+├─ preview-email-mobile.png    ← pièce jointe e-mail · 390 × 1 447 px · 194 Ko
+├─ preview-email-full.png      ← pièce jointe e-mail · 1200 × 11 648 px · 1 138 Ko
+├─ preview-desktop-fullres.png rendu plein format 1440 px (archive, 3,1 Mo)
+├─ preview-mobile-fullres.png  rendu plein format 390 px (archive, 2,1 Mo)
+├─ preview-hero-fullres.png    rendu plein format 1440 px (archive, 726 Ko)
 └─ README.md
 ```
 
@@ -38,7 +37,7 @@ acm-vitrerie-demo/
 6. Zone d'intervention (pastilles cliquables + carte stylisée)
 7. Méthode en 5 étapes
 8. Formulaire de devis (validation front-end, confirmation)
-9. Témoignages (emplacements réservés)
+9. Témoignages (12 avis Google réels — mosaïque 3 colonnes, 1 colonne sur mobile)
 10. Questions fréquentes (accordéon)
 11. Bandeau d'appel à l'action + pied de page complet + mentions légales
 
@@ -73,19 +72,28 @@ Le registre ne publie **aucune zone d'intervention**, **aucun horaire**, **aucun
 **aucune certification** et **aucune garantie** : ces informations n'apparaissent donc pas sur la page
 sous forme d'affirmation, seulement sous forme d'emplacement à compléter.
 
+**Les avis clients, eux, sont publics et vérifiables :** ils proviennent de la fiche Google de l'atelier
+(« ACM VITRERIE — Vitrerie · miroiterie », 40 rue Mal Foch, 69100 Villeurbanne), relevée le 24/11/2026.
+Note agrégée affichée par Google : **5,0/5 · 15 avis**. Les 12 avis publiés ci-dessous sont transcrits
+verbatim (auteur, note, date relative, texte), orthographe et fautes d'origine conservées ; la mention
+de Google « Les avis ne sont pas vérifiés » est reproduite sur la page, ainsi que le compteur exact
+(12 avis affichés sur 15). Les 3 avis restants de la fiche ne sont pas affichés.
+
 ## À remplacer avant mise en ligne
 
 Tous les points à/personnaliser sont signalés dans le code par le mot-clé **`PLACEHOLDER`**
-(30 occurrences) :
+(28 occurrences) :
 
 - `index.html` — horaires d'ouverture, zone d'intervention, liste des prestations, délais annoncés,
-  références normatives (NF EN 12150 / 12600), visuels de la galerie, avis clients, capital social,
+  références normatives (NF EN 12150 / 12600), visuels de la galerie, capital social,
   hébergeur, branchement du formulaire sur la messagerie ou le CRM.
 - Le formulaire n'envoie rien : il affiche une confirmation. Le brancher sur le traitement
   de devis du client.
 - Les compositions graphiques de la galerie et de la carte sont des illustrations vectorielles,
   pas des photos de chantiers.
-- Les témoignages sont des **maquettes vides** : ne jamais publier un avis non réel.
+- Les avis affichés ne sont pas des maquettes : ce sont les **12 avis réellement publiés sur la fiche
+  Google** de l'atelier (5,0/5 · 15 avis), transcrits verbatim. Les 3 avis restants de la fiche
+  ne sont pas affichés ; ne jamais ajouter d'avis non réel.
 - Les marqueurs de confiance du bandeau d'accueil et la liste des communes sont des **emplacements** :
   les valider avec le dirigeant avant toute publication.
 
@@ -102,9 +110,11 @@ Tous les points à/personnaliser sont signalés dans le code par le mot-clé **`
 | Formulaire de devis | OK (6 champs invalides bloquent l'envoi ; confirmation `ACMV-XXXX` ; remise à zéro) |
 | Menu mobile | OK (ouverture, fermeture par lien / burger / `Échap`) |
 | `<title>` / meta description | 59 / 171 caractères, + balises `og:` |
+| Section « Avis clients » | 12 cartes rendues, 0 masquée, 0 texte tronqué (320 / 768 / 1440 px) |
+| Note agrégée affichée | 5,0/5 · 15 avis sur Google + mention « Les avis ne sont pas vérifiés » |
 | Favicon | `assets/img/favicon.svg` chargée (888 octets) |
 | Mentions légales | bloc présent : ACM VITRERIE, SIREN, SIRET, NAF, TVA, dirigeant, enseignes |
-| Poids total de la page | 409 081 octets (~400 Ko) |
+| Poids total de la page | 423 688 octets (~414 Ko) |
 
 **Polices :** Archivo + Inter variables, 4 `@font-face` en woff2, encodées en base64 dans `styles.css`
 → 267 820 caractères de base64, soit **200 865 octets (~196 Ko) de polices pour 310 820 octets de CSS
